@@ -15,15 +15,36 @@ const deletebtn4 = document.getElementById("deletebtn4");
 const close2btn = document.getElementById("close2btn");
 const sign = document.getElementById("sign");
 const signinbtn = document.getElementById("signinbtn");
+const firstLeft = document.getElementById("first-left");
+const firstRight = document.getElementById("first-right");
+const firstCard = document.getElementById("first-card");
+
+const secondLeft = document.getElementById("second-left");
+const secondRight = document.getElementById("second-right");
+const secondCard = document.getElementById("second-card");
+firstLeft.addEventListener("click", () => {
+  firstCard.scroll({ left: 0, behavior: "smooth" });
+});
+
+firstRight.addEventListener("click", () => {
+  firstCard.scroll({ left: 1000, behavior: "smooth" });
+});
+
+secondLeft.addEventListener("click", () => {
+  secondCard.scroll({ left: 0, behavior: "smooth" });
+});
+
+secondRight.addEventListener("click", () => {
+  secondCard.scroll({ left: 1000, behavior: "smooth" });
+});
 
 signinbtn.addEventListener("click", () => {
   sign.style.display = "inline-block";
 });
 
-
-close2btn.addEventListener('click', ()=>{
-    sign.style.display='none';
-})
+close2btn.addEventListener("click", () => {
+  sign.style.display = "none";
+});
 
 watchlistbtn.addEventListener("click", () => {
   watchlist.style.display = "inline-block";
@@ -47,4 +68,10 @@ deletebtn3.addEventListener("click", () => {
 
 deletebtn4.addEventListener("click", () => {
   deleteitem4.style.display = "none";
+});
+
+document.querySelector("#checkbox").addEventListener("change", () => {
+  document.querySelector("#checkbox").checked
+    ? (document.querySelector(".menu").style.background = "#FFF")
+    : (document.querySelector(".menu").style.background = "transparent");
 });
